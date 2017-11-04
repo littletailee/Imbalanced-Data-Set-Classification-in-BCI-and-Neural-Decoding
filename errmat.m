@@ -1,0 +1,13 @@
+function err = errmat(A,B)%A,B为两行（列）1,0向量，A为原始数据，B为预测数据，输出为A11:00,A12:01,A21:10,A22:11
+err = zeros(2,2);
+C = A + B;
+C = floor(abs(C - 1.5));
+err(1,1) = sum(C);
+C = 1 - A;
+D = C.*B;
+err(1,2) = sum(D);
+C = 1 - B;
+D = C.*A;
+err(2,1) = sum(D);
+C = A.*B;
+err(2,2) = sum(C);
