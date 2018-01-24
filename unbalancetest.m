@@ -1,7 +1,8 @@
 %clc;
 %clear;
 %load('LR.mat')
-function [Cm,value3,groupno,avg2,tresult2,position2] = unbalancetest(Data,Data2,k,mini,maxi)%Data为原始数据，Data2为测试数据，k为调整后比例为1：k,tresult2为修正后最优错误率
+function [Cm,value3,groupno,avg2,tresult2,position2] = unbalancetest(Data,Data2,k,mini,maxi)
+%Data为原始数据，Data2为测试数据，k为调整后比例为1：k,tresult2为修正后最优错误率
 tic
 [xd,yd] = size(Data{1,1});
 for i = 1:5
@@ -9,7 +10,7 @@ for i = 1:5
     result2{1,i} = ones(4,16);
 end
 for i = mini:maxi
-    i
+    i;
     if k == 2
         ncount = 51;
     end
